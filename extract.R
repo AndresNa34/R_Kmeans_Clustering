@@ -39,8 +39,8 @@ linksAsp<-sapply(paginas, dameLinksPagina)
 vlink<-as.vector(linksAsp)
 vlink
 
+vlinkAspiradora<-paste0("https://www.amazon.es/", vlink)
+vlinkAspiradora
 
-
-
-
+#info to extract
 
