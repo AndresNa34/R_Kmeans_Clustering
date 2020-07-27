@@ -22,3 +22,25 @@ lista_paginas <- c(1:10)
 pag<-str_replace(pag, "page=2", paste0("page=",lista_paginas))
 pag<-str_replace(pag, "sr_pg_2", paste0("sr_pg_",lista_paginas))
 pag
+
+paginas<-paste0("https://www.amazon.es/", pag)
+paginas
+
+dameLinksPagina<-function(url){
+  selector_fun<-"div > span > div > div > div:nth-child(3) > h2 > a"
+  pagina_fun<-read_html(url)
+  nodo_fun<-html_nodes(pagina_fun, selector_fun)
+  nodo_text_fun<-html_text(nodo_fun)
+  nodo_links_fun<-html_attr(nodo_fun, "href")
+  nodo_links_fun
+}
+
+linksAsp<-sapply(paginas, dameLinksPagina)
+vlink<-as.vector(linksAsp)
+vlink
+
+
+
+
+
+
