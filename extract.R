@@ -17,9 +17,8 @@ urlcompleta
 #https://www.amazon.es/s?k=aspiradora&page=2&__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1601499195&ref=sr_pg_2
 #https://www.amazon.es/s?k=aspiradora&page=3&__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1601499843&ref=sr_pg_3
 
-pag <- "s?k=aspiradora&page=3&__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1601499843&ref=sr_pg_3"
+pag <- "s?k=aspiradora&page=2&__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1601499843&ref=sr_pg_2"
 lista_paginas <- c(1:10)
-pag <- str_replace(pag, "page=2", paste0("page=", lista_paginas))
-pag <- str_replace(pag, "sr_pg_2", paste0("sr_pg_", lista_paginas))
-lista_paginas
-
+pag<-str_replace(pag, "page=2", paste0("page=",lista_paginas))
+pag<-str_replace(pag, "sr_pg_2", paste0("sr_pg_",lista_paginas))
+pag
