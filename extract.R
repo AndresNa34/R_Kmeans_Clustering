@@ -44,3 +44,40 @@ vlinkAspiradora
 
 #info to extract
 
+nombre<-"#productTitle"
+pagina_web<-read_html(url)
+nombre_nodo<-html_node(pagina_web, nombre)
+nombre_texto<-html_text(nombre_nodo)
+nombre_texto
+
+opiniones<-"#acrCustomerReviewText"
+opiniones_nodo<-html_node(pagina_web, opiniones)
+opiniones_texto<-html_text(opiniones_nodo)
+opiniones_texto
+
+precio<-"#priceblock_ourprice"
+precio_nodo<-html_node(pagina_web, precio)
+precio_texto<-html_text(precio_nodo)
+precio_texto
+
+tabla<-"#prodDetails > div.wrapper.ESlocale > div.column.col1 > div > div.content.pdClearfix > div > div > table"
+tabla_nodo<-html_node(pagina_web, tabla)
+tabla_tab<-html_table(tabla_nodo)
+tabla_tab
+class(tabla_tab)
+val<-tabla_tab$X2
+val
+res_tabla<-data.frame(t(val))
+res_tabla
+tabla_name<-tabla_tab$X1
+tabla_name
+colnames(res_tabla)<-tabla_name
+res_tabla
+str(res_tabla)
+
+resultado_aspiradoras<-c(nombre_texto, precio_texto, opiniones_texto, as.character(res_tabla$`Peso del producto`), as.character(res_tabla$Potencia), as.character(res_tabla$`Dimensiones del producto`), as.character(res_tabla$Volumen))
+
+
+
+
+
