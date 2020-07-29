@@ -87,3 +87,4 @@ View(res_limpio)
 setwd("C:/Users/USER/Documents/Platzi/Escuela de Ciencia de Datos/Curso Profesional de Ciencia de Datos")
 write.csv(res_limpio, "res_limpio.csv")
 
+ 
