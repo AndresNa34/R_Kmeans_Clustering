@@ -44,3 +44,52 @@ dat<-rbind(rep(3,8), rep(-2,8), dat)
 
 dat
 radarchart(dat)
+
+#segundo cluster
+dat<-as.data.frame(t(mycluster$centers[2, ]))
+dat
+dat<-rbind(rep(3,10), rep(-1.2,10), dat)
+dat
+radarchart(dat)
+
+#tercer cluster
+dat<-as.data.frame(t(mycluster$centers[3, ]))
+dat
+dat<-rbind(rep(3,10), rep(-1.2,10), dat)
+dat
+radarchart(dat)
+
+#cuarto cluster
+dat<-as.data.frame(t(mycluster$centers[4, ]))
+dat
+dat<-rbind(rep(3,10), rep(-1.2,10), dat)
+dat
+radarchart(dat)
+
+#quinto cluster
+dat<-as.data.frame(t(mycluster$centers[5, ]))
+dat
+dat<-rbind(rep(3,10), rep(-1.2,10), dat)
+dat
+radarchart(dat)
+
+#sexto cluster
+dat<-as.data.frame(t(mycluster$centers[6, ]))
+dat
+dat<-rbind(rep(3,10), rep(-1.2,10), dat)
+dat
+radarchart(dat)
+
+#setimo cluster
+dat<-as.data.frame(t(mycluster$centers[7, ]))
+dat
+dat<-rbind(rep(3,10), rep(-1.2,10), dat)
+dat
+radarchart(dat)
+
+#octavo cluster
+dat<-as.data.frame(t(mycluster$centers[8, ]))
+dat
+dat<-rbind(rep(3,10), rep(-1.2,10), dat)
+dat
+radarchart(dat)
