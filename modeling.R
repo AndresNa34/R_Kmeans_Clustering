@@ -18,3 +18,29 @@ profundidadmedio
 data$profundidad[is.na(data$profundidad)]<-profundidadmedio
 View(data)
 data<-scale(data)
+
+#empezamos el kmeans
+mycluster<-kmeans(data, 3, nstart=5, iter.max = 30)
+
+#aqui hacemos el elbow, en wss se guarda la suma de withinss
+wss<-(nrow(data)-1)*sum(apply(data,2,var))
+for(i in 2:20) wss[i]<-sum(kmeans(data,centers=i)$withinss)
+wss
+plot(1:20, wss, type="b", xlab="Numero de clusters", ylab= "withinss groups")
+
+#del elbow definimos 8 clusters en el video, 10 aqui
+mycluster<-kmeans(data, 8, nstart = 5, iter.max = 30)
+
+library(fmsb) #para hacer un grafico radar para observar los clusters
+par(mfrow=c(2,4)) #Esta funcion nos permite meter varios graficos en un mismo lienzo mfrow nos dice el numero de filas y columnas
+
+#Creamos un data frame donde ir pegando
+dat<-as.data.frame(t(mycluster$centers[1, ]))
+dat
+
+#añadir valores minimos y maximos para el primer cluster
+dat<-rbind(rep(3,8), rep(-2,8), dat)
+# datos<- rbind(rep(maximo, #variables), rep(minimo, #variables), datos)
+
+dat
+radarchart(dat)
